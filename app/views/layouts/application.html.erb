@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UserTask</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    </head>
+
+  <body>
+    <%= render partial: 'shared/header'%>
+    <div class="container mt-3">
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+       
+        <%= flash[:notice] %>
+        </div>
+        <% elsif flash[:error] %>
+        <div class="alert alert-danger">
+       
+        <%= flash[:error] %>
+        </div>
+        <% elsif flash[:alert] %>
+        <div class="alert">
+       
+        <%= flash[:alert] %>
+        </div>
+        <% end %>
+        </div>
+    <div class="container-fluid">
+    <%= yield %>
+    </div>
+  </body>
+</html>
