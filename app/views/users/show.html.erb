@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
+<div class="jumbotron">
+<h1 class="display-8">User Profile</h1>
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
@@ -15,6 +17,8 @@
   <%= @user.place.location %>
 </p>
 
+<%= link_to 'Edit', edit_user_path(@user), class:'btn btn-warning' %> |
+<%= link_to 'Back', users_path, class:'btn btn-info' %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
+</div>
