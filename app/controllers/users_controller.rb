@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   # before_action :set_place, only: %i[ show edit update destroy ]
   # GET /users or /users.json
   def index
-    @users= User.all
+    respond_to do |format|
+      format.html
+      format.json { render json: UserDatatable.new(params) }
+    end
     
   end
 
