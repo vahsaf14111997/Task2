@@ -25,7 +25,7 @@ def view_columns
     records.map do |record|
       {
           id:          record.id, 
-          name:        link_to(record.name,record),
+          name:        link_to(record.name,record, class:'text-dark'),
           phone:       record.phone,
           location:    record.place.location,
           actions:     user_list_actions(record).html_safe,
