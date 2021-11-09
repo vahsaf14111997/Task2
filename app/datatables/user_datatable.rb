@@ -25,10 +25,10 @@ def view_columns
     records.map do |record|
       {
           id:          record.id, 
-          name:        record.name,
+          name:        link_to(record.name,record),
           phone:       record.phone,
           location:    record.place.location,
-          actions:    user_list_actions(record).html_safe,
+          actions:     user_list_actions(record).html_safe,
           DT_RowId:    record.id,
       }
     end
